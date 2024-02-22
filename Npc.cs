@@ -11,18 +11,20 @@ public class Npc : MonoBehaviour
     //Скорость Nps
     public float speed = 1.2f;
 
-    Vector3 newPosition = transform.position;
-    //Не понял как деалть(((
+   
 
 
     void Start()
     {
-        print("int health = 5");
+        health = health + level;
+        print("Жизней: " + health);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 newposition = transform.position;
+        newposition.z += speed * Time.deltaTime;
+        transform.position = newposition;
     }
 }
